@@ -154,7 +154,9 @@ include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += device/lenovo/msm8916/sepolicy
 
 BOARD_SEPOLICY_UNION += \
-    usb_uicc_daemon.te
+    usb_uicc_daemon.te \
+    system_server.te \
+    wcnss_service.te
 
 # QC PROPRIETARY
 ifneq ($(QCPATH),)
