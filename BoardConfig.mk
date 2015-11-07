@@ -58,15 +58,15 @@ BOARD_KERNEL_SEPARATED_DT := true
 BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
 TARGET_USES_UNCOMPRESSED_KERNEL := true
 TARGET_KERNEL_SOURCE := kernel/lenovo/msm8916
-TARGET_KERNEL_CONFIG := cyanogenmod_A6000_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_wt86518_defconfig
 
 # ANT+
 BOARD_ANT_WIRELESS_DEVICE := "vfs-prerelease"
 
 # Audio
-TARGET_USES_QCOM_MM_AUDIO := true
 BOARD_USES_ALSA_AUDIO := true
 AUDIO_FEATURE_ENABLED_FM := true
+AUDIO_FEATURE_LOW_LATENCY_PRIMARY := true
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
@@ -77,9 +77,6 @@ BLUETOOTH_HCI_USE_MCT := true
 # Camera
 TARGET_USE_VENDOR_CAMERA_EXT := true
 USE_DEVICE_SPECIFIC_CAMERA := true
-
-# CMHW
-BOARD_HARDWARE_CLASS += $(DEVICE_PATH)/cmhw
 
 # malloc implementation
 MALLOC_IMPL := dlmalloc
@@ -98,10 +95,6 @@ ifeq ($(HOST_OS),linux)
 endif
 endif
 
-# Radio
-ADD_RADIO_FILES := true
-TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)
-
 # Display
 BOARD_EGL_CFG := $(LOCAL_PATH)/configs/egl.cfg
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
@@ -112,9 +105,6 @@ TARGET_CONTINUOUS_SPLASH_ENABLED := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
-
-# FM
-TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # Fonts
 EXTENDED_FONT_FOOTPRINT := true
@@ -151,21 +141,8 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/fstab.qcom
 TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_SUPPRESS_EMMC_WIPE := true
 
-# TWRP
-DEVICE_RESOLUTION := 720x1280
-BOARD_HAS_NO_REAL_SDCARD := true
-RECOVERY_SDCARD_ON_DATA := true
-TW_TARGET_USES_QCOM_BSP := true
-RECOVERY_GRAPHICS_USE_LINELENGTH := true
-TW_INCLUDE_CRYPTO := true
-TARGET_RECOVERY_QCOM_RTC_FIX := true
-TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
-TW_NEW_ION_HEAP := true
-BOARD_USE_CUSTOM_RECOVERY_FONT := \"roboto_15x24.h\"
-TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
-TW_CUSTOM_THEME := device/lenovo/msm8916/recovery/twres
-
 # Releasetools
+ADD_RADIO_FILES := true
 TARGET_RELEASETOOLS_EXTENSIONS := $(LOCAL_PATH)
 
 # RIL
@@ -174,20 +151,6 @@ TARGET_RIL_VARIANT := caf
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
-BOARD_SEPOLICY_DIRS += \
-    device/lenovo/msm8916/sepolicy
-
-BOARD_SEPOLICY_UNION += \
-    bluetooth_loader.te \
-    file.te \
-    healthd.te \
-    qseecomd.te \
-    surfaceflinger.te \
-    system_server.te \
-    wcnss_service.te \
-    file_contexts \
-    property_contexts
-
 # QC PROPRIETARY
 ifneq ($(QCPATH),)
 BOARD_USES_QCNE := true
@@ -195,9 +158,6 @@ endif
 
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
-
-#ODEX
-WITH_DEXPREOP := true
 
 # Video
 TARGET_HAVE_SIGNED_VENUS_FW := true

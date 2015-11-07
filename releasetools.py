@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-"""Emit commands needed for TCL devices during OTA installation
+"""Emit commands needed for Lenovo devices during OTA installation
 (installing images)."""
 
 import common
