@@ -151,6 +151,11 @@ TARGET_RIL_VARIANT := caf
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
+BOARD_SEPOLICY_DIRS += device/lenovo/msm8916/sepolicy
+
+BOARD_SEPOLICY_UNION += \
+    usb_uicc_daemon.te
+
 # QC PROPRIETARY
 ifneq ($(QCPATH),)
 BOARD_USES_QCNE := true
