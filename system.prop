@@ -103,4 +103,3 @@ ro.sys.fw.trim_empty_percent=100
 ro.sys.fw.trim_cache_percent=100
 ro.sys.fw.trim_enable_memory=1073741824
 persist.backgrounddata.enable=false
-

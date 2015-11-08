@@ -74,11 +74,6 @@ on property:persist.usb.chgdisabled=1
 on property:persist.usb.chgdisabled=0
     write /sys/class/power_supply/battery/charging_enabled 1
 
-service qrngd /system/bin/qrngd -f
-   class main
-   user root
-   group root
-
 service qrngp /system/bin/qrngp -f
    class main
    user root
@@ -204,10 +199,5 @@ service hbtp /system/vendor/bin/hbtp_daemon
     group root
     disabled
 
-service dts_configurator /system/bin/dts_configurator
-    class main
-    user system
-    group system
-    oneshot
 on property:ro.build.type=user
     write /proc/sys/kernel/printk "6 6 1 7"
