@@ -1,0 +1,4 @@
+allow mediaserver sysfs_thermal:dir { search read open  };
+allow mediaserver sysfs_thermal:lnk_file { read };
+allow mediaserver sysfs_thermal:file { read open getattr };
+

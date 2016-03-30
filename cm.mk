@@ -12,17 +12,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product, device/lenovo/msm8916/full_msm8916.mk)
+$(call inherit-product, device/xiaomi/kenzo/full_kenzo.mk)
 
 # Inherit some common CM stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
-PRODUCT_NAME := cm_msm8916
-BOARD_VENDOR := lenovo
-PRODUCT_DEVICE := msm8916
+PRODUCT_BRAND := Xiaomi
+PRODUCT_NAME := cm_kenzo
+BOARD_VENDOR := Xiaomi
+PRODUCT_DEVICE := kenzo
+PRODUCT_MANUFACTURER := Xiaomi
 
-PRODUCT_GMS_CLIENTID_BASE := android-micromax
-
-TARGET_VENDOR_PRODUCT_NAME := Lenovo
-TARGET_VENDOR_DEVICE_NAME := Lenovo
-PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=Lenovo PRODUCT_NAME=Lenovo

@@ -1,7 +1,6 @@
 #!/bin/bash
-
-DEVICE=msm8916
-VENDOR=lenovo
+VENDOR=Xiaomi
+DEVICE=kenzo
 
 OUTDIR=vendor/$VENDOR/$DEVICE
 MAKEFILE=../../../$OUTDIR/$DEVICE-vendor-blobs.mk
@@ -157,7 +156,7 @@ EOF
 
 LOCAL_PATH := \$(call my-dir)
 
-ifeq (\$(TARGET_DEVICE),msm8916)
+ifeq (\$(TARGET_DEVICE),ido)
 ifeq (\$(QCPATH),)
 
 include \$(CLEAR_VARS)

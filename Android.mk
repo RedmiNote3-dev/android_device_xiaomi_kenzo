@@ -15,7 +15,9 @@
 
 LOCAL_PATH := $(call my-dir)
 
-ifeq ($(TARGET_DEVICE),msm8916)
+ifeq ($(TARGET_DEVICE),kenzo)
+
+include device/xiaomi/kenzo/kernel/AndroidKernel.mk
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 

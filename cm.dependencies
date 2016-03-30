@@ -1,0 +1,6 @@
+[
+  {
+    "repository": "android_external_mm-dash",
+    "target_path": "external/mm-dash"
+  };
+]

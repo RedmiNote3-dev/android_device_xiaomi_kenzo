@@ -1,0 +1,1 @@
+allow bootanim init:unix_stream_socket { connectto };

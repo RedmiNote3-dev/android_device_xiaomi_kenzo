@@ -1,0 +1,1 @@
+allow untrusted_app rild_exec:file { getattr };
