@@ -2,7 +2,7 @@
 
 #set -e
 export DEVICE=kenzo
-export VENDOR=Xiaomi
+export VENDOR=xiaomi
 
 if [ $# -eq 0 ]; then
   SRC=adb
@@ -55,7 +55,7 @@ function extract() {
 BASE=../../../vendor/$VENDOR/$DEVICE/proprietary
 rm -rf $BASE/*
 
-extract ../../$VENDOR/$DEVICE/proprietary-files.txt $BASE
+extract ../../$VENDOR/$DEVICE/proprietary-blobs.txt $BASE
 extract ../../$VENDOR/$DEVICE/proprietary-files-qc.txt $BASE
 
 ./setup-makefiles.sh
